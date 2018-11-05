@@ -1,0 +1,30 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "name": "inputDocumentIn",
+      "type": "cosmosDB",
+      "databaseName": "ToDoList",
+      "collectionName": "scelatlong",
+      "id" : "Items",
+      "partitionKey": "partitionKey",
+      "connectionStringSetting": "https://scelatlong.documents.azure.com:443/;AccountKey=kfRmiiR78jbD3A506EuRnKeAgs08aeIWisCjrbmDif5rdiixso9BVUqABWhtOgh5i4VAUWzxEJWEn9gfUHtCZA==;",     
+      "direction": "in"
+  },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}
